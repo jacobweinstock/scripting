@@ -1,0 +1,7 @@
+com/mastertheboss/jmsbrowser/rest/JaxRsActivator.class
+com/mastertheboss/jmsbrowser/EJBBrowser.class
+com/mastertheboss/jmsbrowser/rest/RESTService.class
+com/mastertheboss/jmsbrowser/bean/MessageDTO.class
+com/mastertheboss/jmsbrowser/Manager.class
+com/mastertheboss/jmsbrowser/Producer.class
+com/mastertheboss/jmsbrowser/bean/QueueDTO.class
