@@ -7,7 +7,7 @@ import pprint
 
 empty_digest = hashlib.sha1("").hexdigest()
 
-def create_hash(filename):
+def get_hash(filename):
 	BUF_SIZE = 65536
  	sha1 = hashlib.sha1()
 	with open(filename, 'rb') as f:
@@ -29,12 +29,12 @@ def remove_non_dups(dups):
 			del dups[hash_value]
 	return dups
 
-def get_files(parent_dir):
+def get_dups(parent_dir):
 	dups = {}
 	for dirpath, dirnames, filenames in os.walk(parent_dir):
 		for filename in filenames:
 			full_path = os.path.join(dirpath,filename)
-			hash_value = create_hash(full_path)
+			hash_value = get_hash(full_path)
 			if dups.has_key(hash_value):
 				dups[hash_value].append(full_path)
 			elif hash_value is None:
@@ -44,7 +44,7 @@ def get_files(parent_dir):
 	return remove_non_dups(dups)
 
 
-results = get_files('/home/jacob/salt')
+results = get_dups('/home/jacob/salt')
 pp = pprint.PrettyPrinter(indent=4)
 pp.pprint(results)
 
