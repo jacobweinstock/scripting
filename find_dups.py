@@ -48,9 +48,6 @@ pp = pprint.PrettyPrinter(indent=4)
 pp.pprint(results)
 
 
+##TODO create symlinks for duplicate files 
 #for hash_value, items in dups.iteritems():
 	
-
-
-
-
